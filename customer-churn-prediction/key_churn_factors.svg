@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="570" viewBox="0 0 900 570">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="250" y="36" font-family="Arial" font-size="24" font-weight="700" fill="#17202a">Top churn drivers by standardized model impact</text>
+<text x="20" y="91" font-family="Arial" font-size="15" fill="#17202a">contract_Two year</text>
+<rect x="250" y="70" width="590.0" height="30" rx="4" fill="#2f6f8f"/>
+<text x="848.0" y="91" font-family="Arial" font-size="14" fill="#17202a">0.706</text>
+<text x="20" y="137" font-family="Arial" font-size="15" fill="#17202a">contract_One year</text>
+<rect x="250" y="116" width="431.2" height="30" rx="4" fill="#2f6f8f"/>
+<text x="689.1746124582185" y="137" font-family="Arial" font-size="14" fill="#17202a">0.516</text>
+<text x="20" y="183" font-family="Arial" font-size="15" fill="#17202a">tenure_months</text>
+<rect x="250" y="162" width="422.2" height="30" rx="4" fill="#2f6f8f"/>
+<text x="680.1677940659434" y="183" font-family="Arial" font-size="14" fill="#17202a">0.505</text>
+<text x="20" y="229" font-family="Arial" font-size="15" fill="#17202a">satisfaction_score</text>
+<rect x="250" y="208" width="367.6" height="30" rx="4" fill="#2f6f8f"/>
+<text x="625.6107522331645" y="229" font-family="Arial" font-size="14" fill="#17202a">0.440</text>
+<text x="20" y="275" font-family="Arial" font-size="15" fill="#17202a">monthly_charges</text>
+<rect x="250" y="254" width="322.3" height="30" rx="4" fill="#2f6f8f"/>
+<text x="580.3089261632706" y="275" font-family="Arial" font-size="14" fill="#17202a">0.386</text>
+<text x="20" y="321" font-family="Arial" font-size="15" fill="#17202a">internet_service_Fiber optic</text>
+<rect x="250" y="300" width="255.3" height="30" rx="4" fill="#2f6f8f"/>
+<text x="513.3378138740181" y="321" font-family="Arial" font-size="14" fill="#17202a">0.305</text>
+<text x="20" y="367" font-family="Arial" font-size="15" fill="#17202a">payment_method_Electronic check</text>
+<rect x="250" y="346" width="244.2" height="30" rx="4" fill="#2f6f8f"/>
+<text x="502.249070559892" y="367" font-family="Arial" font-size="14" fill="#17202a">0.292</text>
+<text x="20" y="413" font-family="Arial" font-size="15" fill="#17202a">total_charges</text>
+<rect x="250" y="392" width="214.7" height="30" rx="4" fill="#2f6f8f"/>
+<text x="472.68456535665075" y="413" font-family="Arial" font-size="14" fill="#17202a">0.257</text>
+<text x="20" y="459" font-family="Arial" font-size="15" fill="#17202a">late_payments_12m</text>
+<rect x="250" y="438" width="154.2" height="30" rx="4" fill="#2f6f8f"/>
+<text x="412.24523785739535" y="459" font-family="Arial" font-size="14" fill="#17202a">0.184</text>
+<text x="20" y="505" font-family="Arial" font-size="15" fill="#17202a">service_outages_6m</text>
+<rect x="250" y="484" width="146.9" height="30" rx="4" fill="#2f6f8f"/>
+<text x="404.94494171194276" y="505" font-family="Arial" font-size="14" fill="#17202a">0.176</text>
+</svg>

@@ -1,0 +1,18 @@
+feature,logistic_coefficient,absolute_impact,tree_importance,direction
+contract_Two year,-0.70571,0.70571,0.06264,Lowers churn risk
+contract_One year,-0.51574,0.51574,0.06295,Lowers churn risk
+tenure_months,-0.50496,0.50496,0.0,Lowers churn risk
+satisfaction_score,-0.43971,0.43971,0.23753,Lowers churn risk
+monthly_charges,0.38552,0.38552,0.56949,Increases churn risk
+internet_service_Fiber optic,0.30542,0.30542,0.0,Increases churn risk
+payment_method_Electronic check,0.29215,0.29215,0.03935,Increases churn risk
+total_charges,0.25679,0.25679,0.0,Increases churn risk
+late_payments_12m,0.1845,0.1845,0.01472,Increases churn risk
+service_outages_6m,0.17576,0.17576,0.0,Increases churn risk
+support_tickets_6m,0.17267,0.17267,0.0,Increases churn risk
+auto_pay,-0.12637,0.12637,0.0,Lowers churn risk
+internet_service_None,-0.09839,0.09839,0.0,Lowers churn risk
+payment_method_Mailed check,0.08835,0.08835,0.0,Increases churn risk
+usage_gb_monthly,-0.06422,0.06422,0.0,Lowers churn risk
+senior_citizen,0.04962,0.04962,0.01332,Increases churn risk
+payment_method_Credit card,0.03364,0.03364,0.0,Increases churn risk
