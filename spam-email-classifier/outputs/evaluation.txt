@@ -1,0 +1,5 @@
+Accuracy: 1.000
+
+Label       Precision  Recall  F1     Support
+ham        1.000      1.000   1.000  2
+spam       1.000      1.000   1.000  2
