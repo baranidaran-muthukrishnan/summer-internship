@@ -1,0 +1,8 @@
+# No third-party packages are required for the included baseline model.
+#
+# Optional packages for future extensions:
+# pandas
+# numpy
+# scikit-learn
+# yfinance
+# matplotlib
