@@ -1,0 +1,16 @@
+{
+  "rows": 5000,
+  "churn_rate": 0.2634,
+  "best_model": "Logistic regression",
+  "best_roc_auc": 0.8104002723970944,
+  "outputs": [
+    "churn_prediction_report.md",
+    "churn_rate_by_contract.svg",
+    "customer_churn_historical_data.csv",
+    "customer_churn_predictions.csv",
+    "key_churn_factors.csv",
+    "key_churn_factors.svg",
+    "model_metrics.csv",
+    "risk_decile_lift.csv"
+  ]
+}
