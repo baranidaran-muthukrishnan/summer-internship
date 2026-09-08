@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Customer Service Chatbot</title>
+  <style>
+    :root { --navy:#172a46; --purple:#6858d9; --soft:#f5f4ff; --line:#e2e5eb; --muted:#64748b; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#f0f3f8; font:16px/1.45 Arial,sans-serif; color:var(--navy); }
+    main { width:min(760px,calc(100% - 28px)); min-height:620px; padding:28px; display:flex; flex-direction:column; background:#fff; border-radius:18px; box-shadow:0 12px 40px #233a5b20; }
+    header { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:20px; }
+    h1 { margin:0; font-size:24px; } .status { color:#168556; font-size:13px; margin-top:4px; }
+    #reset { border:1px solid var(--line); background:#fff; padding:9px 12px; border-radius:8px; cursor:pointer; color:var(--navy); }
+    .help { color:var(--muted); margin:22px 0 14px; }
+    #quick { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+    #quick button { border:1px solid #d9d4ff; background:var(--soft); color:#4c3caf; border-radius:999px; padding:8px 11px; cursor:pointer; }
+    #messages { flex:1; min-height:260px; display:flex; flex-direction:column; gap:12px; padding:10px 0 20px; overflow-y:auto; }
+    .message { max-width:82%; padding:12px 14px; border-radius:14px; white-space:pre-wrap; }
+    .bot { align-self:flex-start; background:#f0f2f6; border-bottom-left-radius:3px; }
+    .user { align-self:flex-end; background:var(--purple); color:#fff; border-bottom-right-radius:3px; }
+    .tag { display:block; margin-top:7px; font-size:12px; color:var(--muted); } .user .tag { color:#e7e3ff; }
+    form { display:grid; grid-template-columns:1fr auto; gap:10px; padding-top:18px; border-top:1px solid var(--line); }
+    input { min-width:0; padding:13px; border:1px solid #cbd2dd; border-radius:9px; font:inherit; } input:focus { outline:2px solid #dcd7ff; border-color:var(--purple); }
+    form button { background:var(--purple); border:0; color:#fff; border-radius:9px; padding:0 18px; cursor:pointer; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div><h1>Customer Service Chatbot</h1><div class="status">● Ready to help</div></div>
+      <button id="reset" type="button">Start over</button>
+    </header>
+    <p class="help">Try a question about orders, returns, refunds, payments, passwords, or support hours.</p>
+    <div id="quick">
+      <button type="button">Where is my order?</button>
+      <button type="button">I need a refund</button>
+      <button type="button">My payment failed</button>
+      <button type="button">Reset my password</button>
+    </div>
+    <section id="messages" aria-live="polite"></section>
+    <form id="form">
+      <input id="input" autocomplete="off" placeholder="Type your question here..." maxlength="250">
+      <button type="submit">Send</button>
+    </form>
+  </main>
+  <script>
+    const topics = [
+      { name:"Order tracking", test:["order","package","track","delivery","shipping"], reply:"Open Account > Orders and choose your order to view its current delivery status and tracking link." },
+      { name:"Returns", test:["return","exchange","damaged","wrong item"], reply:"Open Account > Orders, select the item, then choose Return or Exchange. Follow the on-screen return instructions." },
+      { name:"Refunds", test:["refund","money back","reimbursement"], reply:"Approved refunds normally appear within 5 to 7 business days. Your bank may need up to 2 more business days to process it." },
+      { name:"Payments", test:["payment","card","charged","billing","checkout"], reply:"Please check your card number, billing address, and bank approval. Duplicate pending charges usually disappear within 24 to 48 hours." },
+      { name:"Account access", test:["password","login","log in","account","reset"], reply:"Select Forgot password on the sign-in page. A reset link will be sent to your registered email address." },
+      { name:"Support hours", test:["agent","human","support","contact","hours"], reply:"Support agents are available Monday to Friday, 9 AM to 6 PM. Include your order number when you contact the team." }
+    ];
+    const messages = document.getElementById("messages");
+    const input = document.getElementById("input");
+
+    function add(text, type, label) {
+      const item = document.createElement("div");
+      item.className = "message " + type;
+      item.textContent = text;
+      const tag = document.createElement("span");
+      tag.className = "tag";
+      tag.textContent = label;
+      item.appendChild(tag);
+      messages.appendChild(item);
+      messages.scrollTop = messages.scrollHeight;
+    }
+    function replyTo(text) {
+      const lower = text.toLowerCase();
+      const match = topics.find((topic) => topic.test.some((term) => lower.includes(term)));
+      if (match) add(match.reply, "bot", "Topic: " + match.name);
+      else add("I could not identify the topic. Please ask about an order, return, refund, payment, password, or contacting support.", "bot", "Need more detail");
+    }
+    function send(text) {
+      const question = text.trim();
+      if (!question) return;
+      add(question, "user", "You");
+      input.value = "";
+      window.setTimeout(() => replyTo(question), 180);
+    }
+    document.getElementById("form").addEventListener("submit", (event) => { event.preventDefault(); send(input.value); });
+    document.getElementById("quick").addEventListener("click", (event) => { if (event.target.tagName === "BUTTON") send(event.target.textContent); });
+    document.getElementById("reset").addEventListener("click", () => {
+      messages.replaceChildren();
+      add("Hello! What can I help you with today?", "bot", "Customer Service");
+      input.focus();
+    });
+    document.getElementById("reset").click();
+  </script>
+</body>
+</html>
