@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Orbit Support Chat</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <div class="brand"><span>✦</span><div><strong>Orbit Support</strong><small>Online now</small></div></div>
+        <button id="restart" type="button">New chat</button>
+      </header>
+      <section class="intro">
+        <p class="eyebrow">Customer service assistant</p>
+        <h1>How can we help?</h1>
+        <p>Ask about an order, refund, return, payment, password, or delivery.</p>
+      </section>
+      <div class="suggestions" id="suggestions">
+        <button type="button">Track an order</button>
+        <button type="button">Request a refund</button>
+        <button type="button">Reset my password</button>
+        <button type="button">Talk to support</button>
+      </div>
+      <section class="chat" id="chat" aria-live="polite"></section>
+      <form id="chat-form">
+        <label class="visually-hidden" for="message">Your message</label>
+        <input id="message" autocomplete="off" maxlength="280" placeholder="Write a message…">
+        <button class="send" type="submit">Send</button>
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
