@@ -21,6 +21,17 @@ The training command writes:
 python predict.py "Claim your free prize now"
 ```
 
+## Browser Interface
+
+Train the model once, then start the local web interface:
+
+```powershell
+python train.py
+python web_app.py
+```
+
+Open `http://localhost:8000` and paste an email or SMS message. The page shows the Spam or Ham prediction and the model probabilities.
+
 ## Use Your Own Dataset
 
 Create a CSV with these columns:
