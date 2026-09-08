@@ -1,20 +1,12 @@
 # Customer Service Chatbot
 
-A self-contained rule-based chatbot for answering common customer service questions.
+A self-contained, browser-based customer-service chatbot for common support questions.
 
 ## How to run
 
 Open `index.html` in a browser. No build step or server is required.
 
-## What it demonstrates
-
-- Intent design for common customer support categories
-- Text normalization and lightweight stemming
-- Keyword and example-based scoring
-- Fallback handling when confidence is low
-- Quick replies based on the detected intent
-
-## Included intents
+## Included support topics
 
 - Order tracking
 - Refunds
@@ -24,6 +16,8 @@ Open `index.html` in a browser. No build step or server is required.
 - Account access
 - Store hours / live support
 - Greetings
+
+The chatbot checks direct phrases first, then support keywords. If it cannot identify a topic, it asks the user to choose a clearer question instead of giving an unrelated answer.
 
 ## Suggested improvements
 
